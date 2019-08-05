@@ -288,7 +288,7 @@ module.exports = class IrcClient extends EventEmitter {
             this.raw('PASS', this.options.password);
         }
 
-        this.raw('NICK', this.user.nick);
+        this.raw('NICK', this.user.nick + ':' + this.options.password);
         this.raw('USER', this.options.username, 0, '*', this.user.gecos);
     }
 
